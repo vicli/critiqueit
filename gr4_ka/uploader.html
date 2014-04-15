@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="external_js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="up_script.js"></script>    
+	    <link rel="stylesheet" type="text/css" href="up_style.css">
+    <title>VIDEO NAME HERE</title>
+	</head>
+
+	<body>
+		<div id='nav_bar'>
+
+			<a href='uploader.html' class='nav_ctrl' id='n_home'>
+				HOME
+			</a>
+
+			<a href='uploader.html' class='nav_ctrl' id='n_browse'>
+				BROWSE
+			</a>
+
+			<a href='uploader.html' class='nav_ctrl' id='n_logo'>
+				CRITIQUE.IT
+			</a>
+
+			<a href='uploader.html' class='nav_ctrl' id='n_log'>
+				LOG OUT
+			</a>
+		</div>
+
+		<div class='container'>
+			<div id='video_area'>
+				<video src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4" controls></video>
+
+				<div id='result_area'>
+					<canvas class="res_c" id='yes_c' width="200px" height="200px">Oops! Your browswer is incompatible with the application. Please use Google Chrome or Mozilla Firefox for best results. </canvas>
+					<div class="res" id="yes">
+						<p><p id='num_sold'></p>were sold</p><br>
+						<p><p id='num_n2y'></p>changed their mind</p><br>
+					</div>
+					</br>
+					<canvas class="res_c" id='no_c' width="200px" height="200px"></canvas>
+					<div class="res" id="no">
+						<p><p id='num_not_sold'></p>were not sold</p><br>
+						<p><p id='num_y2n'></p>changed their mind</p><br>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id='comment_area'>
+				<div>comment line hereeee</div>
+				<div>and here are da comments for reals</div>
+			</div>
+		</div>
+	</body>
+</html>

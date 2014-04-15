@@ -1,0 +1,102 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+* {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+
+}
+
+a {
+	text-decoration: none;
+	-o-transition:.1s;
+	-ms-transition:.1s;
+	-moz-transition:.1s;
+	 -webkit-transition:.1s;
+}
+
+.container {
+	padding-top: 60px;
+}
+
+/** NAVIGATION BAR **/
+
+#nav_bar {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background-color: #50C1C1;
+	color: #ffffff;
+	text-align: center;
+}
+
+.nav_ctrl {
+	font-family: 'Open Sans Condensed'; 
+	font-weight: 300;
+	color: white;
+	font-size: 18px;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+}
+
+.nav_ctrl:hover {
+	opacity: .5;
+}
+
+#n_logo {
+	left: 50%;
+	margin-left: -45px;
+	font-size: 24px;
+	margin-top: -17px;
+}
+
+#n_log {
+	right: 2%;
+}
+
+#n_home {
+	left: 2%;
+}
+
+#n_browse {
+	left: 10%;
+}
+
+/** VIDEO AREA **/
+
+#video_area {
+	width: 100%;
+	padding: 2%;
+	background-color: #d8d8d8;
+}
+
+video {
+	display: inline-block;
+	width: 60%;
+}
+
+/** RESULTS **/
+
+#result_area {
+	display: inline-block;
+	width: 27%;
+	margin-left: -1%;
+	color: white;
+	vertical-align: top;
+}
+
+.res_c, .res {
+	display: inline-block;
+}
+
+
+/** COMMENTS AREA */
+
+#comment_area {
+
+}
+	
