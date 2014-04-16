@@ -31,51 +31,209 @@
 				LOG OUT
 			</a>
 </div>
-<div class="container">
+<div class="videoarea">
 	<div id="title">
-		<strong>My Video</strong>
+		Video <!-- <div id="author">by James K. Brown<div> -->
 	</div>
 
-	<div id="video1">
-	<video id = "video" width="700" height="440" controls>
-	  <source src="arjun.mp4" type="video/mp4">
+	<video id = "video" controls>
+	  <source src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4" type="video/mp4">
 	</video>
 
+
 	<div id="areyousold">
-		<strong>Are You Sold?</strong><br>
-		<button type="button" class="button2" id="sold">YES</button>
-		<button type="button" class="button2" id="notsold">NO</button>
+		Are You Sold?<br>
+		<button type="button" class = "button2"  id="sold">YES</button>
+		<button type="button" class = "button2"  id="notsold">NO</button>
 	</div>
 
 	<div id="solddisplay" class ="hidden">
-		<strong>YOU ARE SOLD!</strong><br>
-		<button type = "button" class="button2" id="changebtn">Change?</button>
+		YOU ARE SOLD!<br>
+		<button type = "button" class = "button2"  id="changebtn">Change?</button>
 	</div>
 
 	<div id = "notsolddisplay" class="hidden">
-		<strong>YOU ARE NOT SOLD!</strong><br>
-		<button type = "button" class="button2" id="changebtn2">Change?</button>
+		YOU ARE NOT SOLD!<br>
+		<button type = "button" class = "button2"  id="changebtn2">Change?</button>
 	</div>
 
-	<div id="confirm" class ="hidden">
-		<strong>Are you sure you want to change?</strong><br>
-		<div class="buttongroup">
-			<button class="button2" id="yeschange">YES</button>
-			<button class="button2" id="nochange">CANCEL</button>
-		</div>
+	<div id="confirmfromsold" class ="hidden">
+		Why do you want to change?<br>
+		<input type="text" id="changevote1" style="font-size:15px"><br>
+		<button type="button" class = "button2"  id="yeschange">CHANGE</button></br><button type="button" class = "button2" id="nochange">CANCEL</button>
 	</div>
 
-	<div>
-
-	<div id="comments">
-		<input type="text" id="comment" style="font-size:15px">
-		<input type = "submit" id="cmtbtn" value = "Comment" class="button2">
-		<br><br>
-		<div id="comment_list">
-	    </div>
+	<div id="confirmfromnotsold" class ="hidden">
+		Why do you want to change?<br>
+		<input type="text" id="changevote2" style="font-size:15px">
+		<button type="button" class = "button2"  id="yeschange2">CHANGE</button><br><button type="button" class = "button2" id="nochange2">CANCEL</button>
 	</div>
+
+<div id="comment_input">
+	<input type="text" id="comment" style="font-size:15px">
+	<input type = "submit" id="cmtbtn" class="button2" value = "Comment">
+
 </div>
-<script type="text/javascript" src="js/reviewer.js"></script>
+
+</div>
+
+<div id="videoline"></div>
+
+<div id = "hidecomments"><h6> hide comments</h6></div>
+<div id = "showcomments" class="hidden"><h6> show comments</h6></div>
+
+<div id="comments">
+
+	<h1 id="comment_header">Comments</h1>
+	<div id="comment_list">
+    </div>
+</div>
+
+
+<script>
+
+var video=document.getElementById("video"); 
+$('#cmtbtn').click(function(){
+  		// $('#comment_list').append($('#comment').val()+ '<br>');
+  		$('#comment_list').append('<div id="individual_comment"><table border="1" id="cmt_table"><th id="time_stamp">'+$('#comment').val().substring(1,5)+
+								'</th><th id="comment_text">'+$('#comment').val().substring(6)+'</div>')
+  		$('#comment').val('');
+  		video.play();
+  	});
+
+
+$('#changevote1').keyup(function(){
+	if(event.keyCode == 13){
+		$("#yeschange").click();
+	}
+});
+
+$('#changevote2').keyup(function(){
+	if(event.keyCode == 13){
+		$("#yeschange2").click();
+	}
+});
+
+$("#comment").keydown(function(event){ 
+	if(event.keyCode == 13){
+		$("#cmtbtn").click();
+	}
+	else if (!video.paused){
+		video.pause();
+	}
+	console.log("get here?")
+
+	var minutes = Math.floor(video.currentTime/60);
+	var seconds = Math.floor(video.currentTime-minutes*60)
+	if (seconds<10){
+		seconds='0'+seconds
+	}
+	if ($('#comment').val().length==1){
+		console.log("get here?now")
+		$('#comment').val('['+minutes+":"+seconds+'] '+$('#comment').val());
+	}
+
+});
+
+
+
+$(window).click(function(e) {
+	if ((42<=event.clientX<=660) && (126<=event.clientY<=200)){
+		// console.log("HELLOO")
+		// console.log(event.clientX)
+		// console.log(event.clientY)
+		// if (video.paused){
+		// 	video.play();
+		// }
+		// else{
+		// 	video.pause();
+		// }
+
+	}
+});
+
+
+$('#sold').click(function(){
+	$('#areyousold').addClass('hidden')
+	$('#solddisplay').removeClass('hidden')
+});
+
+$('#notsold').click(function(){
+	$('#areyousold').addClass('hidden')
+	$('#notsolddisplay').removeClass('hidden')
+});
+
+
+$('#changebtn').click(function(){
+
+	$('#confirmfromsold').removeClass("hidden");
+	$('#solddisplay').addClass('hidden');
+	$('#changevote1').focus()
+
+	$('#yeschange').click(function(){
+		if ($("#changevote1").val().length===0){
+			console.log("lengthbelow")
+			console.log($("#changevote1").val().length);
+			alert("You must provide a reason for changing")
+		}	
+		else{
+			console.log("alert?")
+			console.log($("#changevote1").val().length)
+			console.log($("#changevote1").val())
+			$('#confirmfromsold').addClass("hidden");
+			$('#notsolddisplay').removeClass('hidden');
+		}
+	})
+	$('#nochange').click(function(){
+		$('#confirmfromsold').addClass("hidden");
+		$('#solddisplay').removeClass('hidden');
+	})
+});
+
+$('#changebtn2').click(function(){
+
+	$('#confirmfromnotsold').removeClass("hidden");
+	$('#notsolddisplay').addClass('hidden');
+	$('#changevote2').focus()
+
+	$('#yeschange2').click(function(){
+		if ($("#changevote2").val().length==0){
+			alert("You must provide a reason for changing")
+		}
+		else{
+			$('#confirmfromnotsold').addClass("hidden");
+			$('#solddisplay').removeClass('hidden');
+		}
+	});
+	$('#nochange2').click(function(){
+		$('#confirmfromnotsold').addClass("hidden");
+		$('#notsolddisplay').removeClass('hidden');
+	});
+
+});
+
+/*COMMENTS AREA*/
+
+$('#hidecomments').click(function(){
+	$('#hidecomments').addClass('hidden');
+	$('#comments').addClass('hidden');
+	$('#showcomments').removeClass('hidden');
+});
+
+$('#showcomments').click(function(){
+	$('#comments').removeClass('hidden');
+	$('#hidecomments').removeClass('hidden');
+	$('#showcomments').addClass('hidden');
+});
+
+
+
+
+</script>
+
+<div id='footer'>
+			MIT 6.813 Course Project | Andre Mroz, Jennifer Hu, Kristin Au, Victoria Li
+		</div>
 
 </body>
 

@@ -57,7 +57,7 @@
 	left: 20%;
 }
 
-/**  BUTTON **/
+/**  BUTTONS **/
 
 .button{
 	font-family: 'Open Sans Condensed';
@@ -66,11 +66,12 @@
 	margin: 0 auto;
 	color:white;
 	font-size:20px;
-	display:block;
+	display:inline;
 	width:250px;
 	margin-bottom:50px;
 	height: 40px;
 }
+
 .button2{
 	font-family: 'Open Sans Condensed';
 	border:none;
@@ -83,6 +84,7 @@
 	height: 30px;
 
 }
+
 .button:hover, .button2:hover{
 	background-color:#B4CDCD;
 	cursor:pointer;
@@ -92,4 +94,23 @@
 	margin-top:5%;
 }
 
+/**  SEARCH BAR **/
+.searchpanel{
+	margin: 0 auto;
+	text-align: center;
+}
+.search{
+	font-size: 16px;
+	height: 30px;
+	width: 400px;
+	border:1.5px solid #668b8b;
+}
 
+/** FOOTER **/
+#footer {
+	font-family: 'Open Sans Condensed'; 
+	font-weight: 300;
+	font-size: 18px;
+	text-align: center;
+	margin: 50px 0 20px 0;
+}
