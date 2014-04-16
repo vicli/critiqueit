@@ -57,7 +57,7 @@
 	left: 20%;
 }
 
-/**  BUTTON **/
+/**  BUTTONS **/
 
 .button{
 	font-family: 'Open Sans Condensed';
@@ -71,6 +71,7 @@
 	margin-bottom:50px;
 	height: 40px;
 }
+
 .button2{
 	font-family: 'Open Sans Condensed';
 	border:none;
@@ -92,4 +93,14 @@
 	margin-top:5%;
 }
 
-
+/**  SEARCH BAR **/
+.searchpanel{
+	margin: 0 auto;
+	text-align: center;
+}
+.search{
+	font-size: 16px;
+	height: 30px;
+	width: 400px;
+	border:1.5px solid #668b8b;
+}
