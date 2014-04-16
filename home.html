@@ -2,16 +2,20 @@
 	<title> critique.it</title>
 	<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
-
+	<script type="text/javascript" src="external_js/jquery.colorbox-min.js"></script>
 </head>
+<script type="text/javascript" src="js/browse.js"></script>
+
 <link rel="stylesheet" type="text/css" href="css/navbar.css">
 <link rel= "stylesheet" type="text/css" href="css/browse.css">
+<link rel="stylesheet" href="css/colorbox.css" />
+
 
 
 <body>
 <div id='nav_bar'>
 
-			<a href='home.html' class='nav_ctrl' id='n_home'>
+			<a href='home.html' class='nav_ctrl' id='n_home' style="opacity: .5;">
 				YOUR VIDEOS
 			</a>
 
@@ -34,84 +38,95 @@
 
 <div class="listing">
 	<div class="uploadbutton">
-		<button class ="button">UPLOAD YOUR VIDEO</button>
+		<button class ="button" id="upload">UPLOAD YOUR VIDEO</button>
+	</div>
+	<div class="searchpanel">
+		<input class="search"  type="text"></input>
+		<button class="button2"> SEARCH</button>
+	</div>
+	<div class = "title">
+		YOUR VIDEOS
 	</div>
 	<div class="videopanel">
 		<div class="videorow">
 			<div class= "videogroup">
 				<a href="uploader.html"><img class="video" id="1" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png"></a>
-				<div class="overlay">
-					<p id="videotext1" style="text-align:center">
-						<!-- <span>My Pitch 1</span> -->
+				<div class="overlay" id="videotext1">
+					<p style="text-align:center">
 						</br>
 						<table class="table">
 							<tr class="videotexttitle">
 								<td colspan="2" >My Pitch 1</td>
+							</tr>
+							<tr >
+								<td class="videotext">SOLD</td>
+								<td class="videotext">NOT SOLD</td>
+							</tr>
+							<tr >
+								<td class="videotextnum"> 45 </td>
+								<td class="videotextnum"> 11 </td>
+							</tr>
+						</table>
+					</p>
+				</div>
+			</div>
+			<div class= "videogroup">
+				<a href="uploader.html"><img class="video" id="2" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png"></a>
+				<div class="overlay" id="videotext2">
+					<p  style="text-align:center">
+						</br>
+						<table class="table">
+							<tr class="videotexttitle">
+								<td colspan="2" >My Pitch 2</td>
 							</tr>
 							<tr>
 								<td class="videotext">SOLD</td>
 								<td class="videotext">NOT SOLD</td>
 							</tr>
 							<tr >
-								<td class="videotext"> 45 </td>
-								<td class="videotext"> 11 </td>
+								<td class="videotextnum"> 45 </td>
+								<td class="videotextnum"> 11 </td>
 							</tr>
 						</table>
-						<!-- <span class = "sold">SOLD</span>
-						<span class = "sold">NOT SOLD</span> </br>
-						<span class = "numbers">82</span>
-						<span class = "numbers">12</span> -->
 					</p>
 				</div>
 			</div>
 			<div class= "videogroup">
-				<a href="uploader.html"><img class="video" id="2" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png"></a>
-				<p class="videotext" id="videotext2">My Pitch 2</br>
-					<span class = "sold">SOLD</span>
-					<span class = "sold">NOT SOLD</span> </br>
-					<span class = "numbers">54</span>
-					<span class = "numbers">102</span>
-				</p>
-
-			</div>
-			<div class= "videogroup">
 				<a href="uploader.html"><img class="video" id="3" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png"></a>
-				<p class="videotext" id='videotext3'>My Pitch 3</br>
-					<span class = "sold">SOLD</span>
-					<span class = "sold">NOT SOLD</span> </br>
-					<span class = "numbers">104</span>
-					<span class = "numbers">24</span>
-				</p>
-
+				<div class="overlay" id="videotext3">
+					<p  style="text-align:center">
+						</br>
+						<table class="table">
+							<tr class="videotexttitle">
+								<td colspan="2" >My Pitch 3</td>
+							</tr>
+							<tr>
+								<td class="videotext"><img src="images/thumbs-up.png" style="width:16px"></td>
+								<td class="videotext">NOT SOLD</td>
+							</tr>
+							<tr >
+								<td class="videotextnum"> 45 </td>
+								<td class="videotextnum"> 11 </td>
+							</tr>
+						</table>
+					</p>
+				</div>
 			</div>
 			
 		</div>
 		<div class="videorow">
 		
 		</div>
-	<!-- 	<div class="overlayrow">
-			<div class="overlay">hello</div>
-		</div> -->
-
-		<!-- <div class="video"></div> -->
-		<!-- <div class="video"></div> -->
-		<!-- <div class="video"></div> -->
 	</div>
 </div>
-<script type="text/javascript">
-	$(".video").mouseover(function(){
-		var id = $(this).attr('id');
-		// alert("div#videotext"+id+".videotext");
-		var targetDiv =$("#videotext"+id+".videotext");
-		$(targetDiv).fadeOut(100);
-	})
-	.mouseout(function(){
-		var id = $(this).attr('id');
-		// alert("div#videotext"+id+".videotext");
-		var targetDiv =$("#videotext"+id+".videotext");
-		$(targetDiv).fadeIn(200);
-	})
-</script>
+<div id="uploadcontent" style='display:none'>
+	hii pretend this lets you upload stuff
+	</br>
+	<div class="buttongroup">
+		<button class ="button2" onclick="uploaded();">UPLOAD</button>
+		<button class ="button2" onclick="$.colorbox.close()">CANCEL</button>
+	</div>
+</div>
 
 </body>
 

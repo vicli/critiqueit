@@ -51,7 +51,6 @@ $(document).ready(function() {
 			drawCircle(graph_color[2*i], sold_data[i], total);
 		}
 	}
-
 	$("#num_sold").html(sold_data[0] + '');
 	$("#num_n2y").html(sold_data[3] + '');
 	$("#num_not_sold").html(sold_data[1] + '');
@@ -59,6 +58,7 @@ $(document).ready(function() {
 
 	$("#num_n2y_c").html(sold_data[3] + '');
 	$("#num_y2n_c").html(sold_data[2] + '');
+
 
 	for (var m=0; m< dummy_comments2n.length; m++) {
 		dummy_comments2n[m].render_change();

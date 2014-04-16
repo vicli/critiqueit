@@ -1,7 +1,27 @@
+function getVideoDuration(duration) {
+    var minutes = Math.floor(duration/60);
+    var seconds = Math.floor(duration%60);
+
+    if (seconds<10) {
+      var print_time= minutes+":0"+seconds;
+    }
+    else {
+      var print_time= minutes+":"+seconds;
+    }
+    return print_time;
+}
+
 window.onload = function() {
 
   // Video
   var video = document.getElementById("video");
+
+  duration = video.duration;
+  $("#duration").html(getVideoDuration(duration));
+
+  video.addEventListener('loadedmetadata', function() {
+      console.log(getVideoDuration(duration));
+  });
 
   // Buttons
   var playButton = document.getElementById("play-pause");
@@ -12,20 +32,20 @@ window.onload = function() {
   var volumeBar = document.getElementById("volume-bar");
 
 
-playButton.addEventListener("click", function() {
-  if (video.paused == true) {
+function togglePlay() {
+    if (video.paused == true) {
     // Play the video
     video.play();
-
-    // Update the button text to 'Pause'
-    playButton.innerHTML = "Pause";
+    playButton.src = 'images/pause.png';
   } else {
     // Pause the video
     video.pause();
-
-    // Update the button text to 'Play'
-    playButton.innerHTML = "Play";
+    playButton.src = 'images/play.png';
   }
+}
+
+playButton.addEventListener("click", function() {
+  togglePlay();
 });
 
 fullScreenButton.addEventListener("click", function() {
@@ -62,8 +82,12 @@ video.addEventListener("timeupdate", function() {
   seekBar.value = value;
 });
 
-volumeBar.addEventListener("change", function() {
-  // Update the video volume
-  video.volume = volumeBar.value;
-});
+  video.addEventListener("click", function() {
+    togglePlay();
+  });
+
+  volumeBar.addEventListener("change", function() {
+    // Update the video volume
+    video.volume = volumeBar.value;
+  });
 }
