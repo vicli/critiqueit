@@ -24,8 +24,8 @@
 	background-color: #FAFAFA;
 	/*margin-top: 10px;*/
 	height: 300px;
-	margin-left:2%;
-	margin-right:2%;
+	/*margin-left:1%;*/
+	/*margin-right:1%;*/
 }
 .videogroup{
 	height:300px;
@@ -92,6 +92,13 @@ td{
     /*position:absolute;  */
 	font-size: 20px;
 	text-align: center;
+}
+.toppanel{
+	padding-top: 30px;
+	width:100%;
+}
+#upload{
+	margin-right: 5%;
 }
 
 

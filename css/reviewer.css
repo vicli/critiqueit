@@ -210,14 +210,7 @@ body{
 	height: 30px;
 }
 
-/** FOOTER **/
-#footer {
-	font-family: 'Open Sans Condensed'; 
-	font-weight: 300;
-	font-size: 18px;
-	text-align: center;
-	margin: 50px 0 20px 0;
-}
+
 
 /*BUTTONS*/
 #changevote1{
@@ -225,6 +218,7 @@ body{
 }
 #changevote2{
 	margin-top: 10px;
+	}
 }
 .button2{
 	font-family: 'Open Sans Condensed';

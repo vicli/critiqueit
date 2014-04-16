@@ -66,7 +66,9 @@ $(document).ready(function() {
 	}
 
 	for (var n=0; n< fake_comments.length; n++) {
-		fake_comments[n].render_stamp();
+		if (fake_comments[n].getTimeStamp() < 10) {
+			fake_comments[n].render_stamp();
+		}	
 	}
 
 

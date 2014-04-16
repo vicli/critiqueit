@@ -10,6 +10,10 @@ var Comment = function(text, author, isChange, timeStamp ) {
 		this.timeStamp = -1;
 	}
 
+	this.getTimeStamp = function() {
+		return this.timeStamp;
+	}
+
 	this.render_change = function() {
 		if (this.isChange == "y2n") {
 			var parent = document.getElementById('y2n_cmtbx');
@@ -37,7 +41,7 @@ var Comment = function(text, author, isChange, timeStamp ) {
 
 		var render_time = minute+ ':'+second;
 
-		var parent= document.getElementById('comment_container');
+		var parent= document.getElementById('ind_comment_container');
 
 		var comment = document.createElement('div');
 		comment.className = 'individual_comment';
