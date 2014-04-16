@@ -102,7 +102,7 @@ td{
 .button{
 	font-family: 'Open Sans Condensed';
 	border:none;
-	background-color:#B4CDCD;
+	background-color: #668b8b;
 	margin: 0 auto;
 	color:white;
 	font-size:20px;
@@ -112,6 +112,6 @@ td{
 	height: 40px;
 }
 .button:hover{
-	background-color: #668b8b;
+	background-color:#B4CDCD;
 	cursor:pointer;
 }
