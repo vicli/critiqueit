@@ -7,11 +7,11 @@
 
 .title{
 	text-align: left;
-	margin-left: 2%;
+	margin-left: 4%;
 	font-size: 16px;
 	padding-bottom: 5px;
 	margin-top: 2%;
-	color: #2e2f2f;
+	color: #444444;
 	position:relative;
 }
 
@@ -20,8 +20,8 @@
 	background-color: #f2f2f2;
 	/*margin-top: 10px;*/
 	height: 300px;
-	margin-left:1%;
-	margin-right:1%;
+	margin-left:2%;
+	margin-right:2%;
 }
 .videogroup{
 	height:300px;
@@ -37,11 +37,11 @@
 .videotext{
 	z-index:100;
     position:absolute;    
-    color:#2e2f2f;
+    color:#506e6e;
     font-family: 'Arial';
     font-size:24px;
     left:100px;
-    top:50px;
+    top:30%;
 }
 
 .videotext .sold{
@@ -63,12 +63,19 @@
 	cursor:pointer;
 }
 
-./*videotext{
-	z-index: 100;
-	position:absolute;
-	position: inline; 
-	margin-top: 100px;
-	margin-left: 50px;
-	color: red;
-  
-}*/
+.button{
+	font-family: 'Open Sans Condensed';
+	border:none;
+	background-color:#B4CDCD;
+	margin: 0 auto;
+	color:white;
+	font-size:20px;
+	display:block;
+	width:250px;
+	margin-bottom:50px;
+	height: 40px;
+}
+.button:hover{
+	background-color: #668b8b;
+	cursor:pointer;
+}
