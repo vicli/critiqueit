@@ -65,6 +65,11 @@ $(document).ready(function() {
 		dummy_comments2y[m].render_change();
 	}
 
+	for (var n=0; n< fake_comments.length; n++) {
+		fake_comments[n].render_stamp();
+	}
+
+
 	$('#y_c').hover(function() {
 			$('#y_a').animate({'paddingLeft': '10px'}, 150)
 		},

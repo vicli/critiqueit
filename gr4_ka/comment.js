@@ -26,6 +26,31 @@ var Comment = function(text, author, isChange, timeStamp ) {
 
     	parent.appendChild(change);
 	}
+
+	this.render_stamp = function() {
+		var time = this.timeStamp;
+		var minute = Math.floor(time/60);
+		var second = time%60; 
+		if (second<10) {
+			second = '0'+second;
+		}
+
+		var render_time = minute+ ':'+second;
+
+		var parent= document.getElementById('comment_container');
+
+		var comment = document.createElement('div');
+		comment.className = 'individual_comment';
+
+
+		var comment_material = '<table border="1" id="cmt_table"><th id="time_stamp">'+render_time+
+								'</th><th id="comment_text">'+ this.text +
+								'<br/><p class="cmt_auth">by '+this.author+'<p></th>';
+
+
+	    comment.innerHTML = comment_material;
+	    parent.appendChild(comment);
+	}
 }
 	
 var dummy_comments2y= [];
@@ -34,13 +59,29 @@ var random_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
 
 for (var i=0; i< 5; i++) {
 	var author = 'user'+ i;
-	var comment = new Comment(random_text, author, "n2y")
+	var comment = new Comment(random_text, author, "n2y");
 	dummy_comments2y.push(comment);
 }
 
 for (var i=5; i< 10; i++) {
 	var author = 'user'+ i;
-	var comment = new Comment(random_text, author, "y2n")
+	var comment = new Comment(random_text, author, "y2n");
 	dummy_comments2n.push(comment);
 }
+
+var fake_comments = [];
+var filler_text = 'Nulla ornare ullamcorper imperdiet. Donec ac tempor lectus. '
+var filler_text2 ='Quisque ultricies tortor est, at facilisis est pretium ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+
+for (var i=0; i< 40; i++) {
+	var author = 'userX'+ i;
+	if (i%3 == 0) {
+		var comment = new Comment(filler_text, author, false, 2*i+1);
+	}
+	else {
+		var comment = new Comment(filler_text2, author, false, 2*i+1);
+	}
+	fake_comments.push(comment);
+}
+
 
