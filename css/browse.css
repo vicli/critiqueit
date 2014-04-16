@@ -4,7 +4,7 @@
 	text-align: left;
 	margin-left: 4%;
 	font-size: 16px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 	margin-top: 2%;
 	color: #444444;
 	position:relative;
@@ -20,8 +20,8 @@
 }
 
 .videopanel{
-	border-top: 2px solid #e5e5e5;
-	background-color: #f2f2f2;
+	border: 2px solid #F5F5F5;
+	background-color: #FAFAFA;
 	/*margin-top: 10px;*/
 	height: 300px;
 	margin-left:2%;
@@ -37,6 +37,7 @@
 }
 .video{
 	opacity: 0.15;
+	box-shadow: 1px 1px 1px #888888;
 }
 
 .videorow{
@@ -58,10 +59,16 @@
     position:absolute;   
     top:15%;
 	width:100%;
+	pointer-events: none;
 }
 
 .table{
 	width:100%;
+}
+
+td{
+	width:50%;
+	padding-top:5px;
 }
 .videotexttitle{
     color:#506e6e;
@@ -76,8 +83,14 @@
     position:relative;    
     /*position:absolute;  */
 	font-size: 12px;
-	/*width:100%;*/
-	top:10%;
+	text-align: center;
+}
+
+.videotextnum{
+	z-index:100;
+    position:relative;    
+    /*position:absolute;  */
+	font-size: 20px;
 	text-align: center;
 }
 
