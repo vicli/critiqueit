@@ -3,7 +3,8 @@
 		<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 		<script type="text/javascript" src="external_js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
 		<script src="up_script.js"></script>    
-		<script src="comment.js"></script>    
+		<script src="comment.js"></script>
+		<script src="control_bar.js"></script>    
 	    <link rel="stylesheet" type="text/css" href="up_style.css">
     <title>VIDEO NAME HERE</title>
 	</head>
@@ -34,7 +35,7 @@
 
 		<div class='container'>
 			<div id='video_area'>
-				<video src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4" controls></video>
+				<video id="video" src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4" controls></video>
 
 				<div id='result_area'>
 
@@ -75,7 +76,12 @@
 				</div>
 
 			</div>
-
+			<div id="video-controls">
+    			<button type="button" id="play-pause">Play</button>
+    			<input type="range" id="seek-bar" step='10' value="0">
+    			<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+    			<button type="button" id="full-screen">Full-Screen</button>
+  			</div>
 			<div id='comment_area'>
 				<div>comment line hereeee</div>
 				<div>and here are da comments for reals</div>
