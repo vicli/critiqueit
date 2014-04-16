@@ -14,5 +14,5 @@ $(document).ready(function(){
 		$(targetDiv).fadeIn(200);
 	});
 
-	$('#upload').colorbox({width:"600px", height:"500px", inline:true, href:"#uploadcontent"});
+	$('#upload').colorbox({width:"400px", height:"100px", inline:true, href:"#uploadcontent"});
 })
