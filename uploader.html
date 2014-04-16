@@ -4,8 +4,8 @@
 		<script type="text/javascript" src="external_js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
 		<script src="js/up_script.js"></script>    
 		<script src="js/comment.js"></script>
-		<script src="js/control_bar.js"></script>    
-		<link rel="stylesheet" type="text/css" href="css/navbar.css">
+		<script src="js/control_bar.js"></script> 
+		<link rel="stylesheet" type="text/css" href="css/navbar.css">   
 	    <link rel="stylesheet" type="text/css" href="css/up_style.css">
     <title>VIDEO NAME HERE</title>
 	</head>
@@ -36,13 +36,13 @@
 
 		<div class='container'>
 			<div id='video_area'>
-				<video id="video" src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4" controls></video>
+				<video id='video' src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4" controls></video>
 
 				<div id='result_area'>
 
 					<div class='change_cmts' id='n2y_cmt'>
 						<h2 class='cmt_hd' id='n2y_c_head'><b id='num_n2y_c'></b> changed to SOLD</h2>
-						<img class='bck_arw' id='bck_yes_arw' src='images/arrow.png'><p class='back' id='bck_yes'>BACK</p>
+						<img class='bck_arw' id='bck_yes_arw' src='img/arrow.png'><p class='back' id='bck_yes'>BACK</p>
 						<div class='cmtbx' id='n2y_cmtbx'>
 						</div>
 					</div>
@@ -77,16 +77,28 @@
 				</div>
 
 			</div>
-			<div id="video-controls">
-    			<button type="button" id="play-pause">Play</button>
-    			<input type="range" id="seek-bar" step='10' value="0">
-    			<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-    			<button type="button" id="full-screen">Full-Screen</button>
-  			</div>
+
 			<div id='comment_area'>
-				<div>comment line hereeee</div>
-				<div>and here are da comments for reals</div>
+				<div id='videoline_container'>
+					<div id='vidline_playback_container'>
+						<div id="video-controls">
+	    					<button type="button" id="play-pause">Play</button>
+	    					<input type="range" id="seek-bar" step='10' value="0">
+	    					<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+	    					<button type="button" id="full-screen">Full-Screen</button>
+  						</div>
+					</div>
+				</div>
+
+				<div id='pointer_container'><img id='pointer' src='images/pointer.png'></div>
+				<div id='comment_container'>
+					<h1 id='comments_head'>Video Comments @ 0:XX - 0:XX</h1>
+				</div>
 			</div>
+		</div>
+
+		<div id='footer'>
+			MIT 6.813 Course Project | Andre Mroz, Jennifer Hu, Kristin Au, Victoria Li
 		</div>
 	</body>
 </html>
