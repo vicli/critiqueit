@@ -55,6 +55,7 @@
 
 #n_upload {
 	left: 20%;
+	cursor:pointer;
 }
 
 /**  BUTTONS **/
@@ -92,6 +93,12 @@
 .buttongroup{
 	margin:0 auto;
 	margin-top:5%;
+}
+/**  UPLOAD POPUP **/
+.uploadcontent{
+	/*display:none;*/
+	text-align: center;
+	margin-top: 10%;
 }
 
 /**  SEARCH BAR **/
