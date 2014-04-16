@@ -13,4 +13,6 @@ $(document).ready(function(){
 		var targetDiv =$("#videotext"+id);
 		$(targetDiv).fadeIn(200);
 	});
+
+	$('#upload').colorbox({width:"600px", height:"500px", inline:true, href:"#uploadcontent"});
 })
