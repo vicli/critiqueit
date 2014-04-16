@@ -33,42 +33,27 @@
 </div>
 
 <div class="listing">
-	<div class="uploadbutton">
-		
-	</div>
+	
 	<div class = "title">
 		FEATURED
 	</div>
 	<div class="videopanel">
 		<div class="videorow">
 			<div class= "videogroup">
-				<img class="video" id="1" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png">
+				<a href="reviewer.html"><img class="video" id="1" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png"></a>
+				
 				<p class="videotext" id="videotext1" style="text-align:center">My Pitch 1</br>
-					<table>
-						<tr>
-							<td>SOLD</td>
-							<th>NOT SOLD</th>
-						</tr>
-					</table>
 				</p>
 			</div>
 			<div class= "videogroup">
 				<img class="video" id="2" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png">
 				<p class="videotext" id="videotext2">My Pitch 2</br>
-					<span class = "sold">SOLD</span>
-					<span class = "sold">NOT SOLD</span> </br>
-					<span class = "numbers">54</span>
-					<span class = "numbers">102</span>
 				</p>
 
 			</div>
 			<div class= "videogroup">
 				<img class="video" id="3" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png">
 				<p class="videotext" id='videotext3'>My Pitch 3</br>
-					<span class = "sold">SOLD</span>
-					<span class = "sold">NOT SOLD</span> </br>
-					<span class = "numbers">104</span>
-					<span class = "numbers">24</span>
 				</p>
 
 			</div>
@@ -86,31 +71,17 @@
 			<div class= "videogroup">
 				<img class="video" id="4" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png">
 				<p class="videotext" id="videotext4" style="text-align:center">My Pitch 1</br>
-					<table>
-						<tr>
-							<td>SOLD</td>
-							<th>NOT SOLD</th>
-						</tr>
-					</table>
 				</p>
 			</div>
 			<div class= "videogroup">
 				<img class="video" id="5" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png">
 				<p class="videotext" id="videotext5">My Pitch 2</br>
-					<span class = "sold">SOLD</span>
-					<span class = "sold">NOT SOLD</span> </br>
-					<span class = "numbers">54</span>
-					<span class = "numbers">102</span>
 				</p>
 
 			</div>
 			<div class= "videogroup">
 				<img class="video" id="6" style="height:auto; width:auto; max-width:300px; max-height:300px;" src="./images/stock.png">
 				<p class="videotext" id='videotext6'>My Pitch 3</br>
-					<span class = "sold">SOLD</span>
-					<span class = "sold">NOT SOLD</span> </br>
-					<span class = "numbers">104</span>
-					<span class = "numbers">24</span>
 				</p>
 
 			</div>
@@ -133,6 +104,9 @@
 		var targetDiv =$("#videotext"+id+".videotext");
 		$(targetDiv).fadeIn(200);
 	})
+	function imageClick(url) {
+    	window.location = url;
+	}
 </script>
 
 </body>
