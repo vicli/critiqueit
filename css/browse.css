@@ -1,3 +1,17 @@
+/** TITLE PROPERTIES **/
+
+.title{
+	text-align: left;
+	margin-left: 4%;
+	font-size: 16px;
+	padding-bottom: 10px;
+	margin-top: 2%;
+	color: #444444;
+	position:relative;
+}
+
+
+/** VIDEO LISTING PROPERTIES **/
 
 .listing{
 	margin-top: 8%;
@@ -5,19 +19,9 @@
 	height: 100%;
 }
 
-.title{
-	text-align: left;
-	margin-left: 4%;
-	font-size: 16px;
-	padding-bottom: 5px;
-	margin-top: 2%;
-	color: #444444;
-	position:relative;
-}
-
 .videopanel{
-	border-top: 2px solid #e5e5e5;
-	background-color: #f2f2f2;
+	border: 2px solid #F5F5F5;
+	background-color: #FAFAFA;
 	/*margin-top: 10px;*/
 	height: 300px;
 	margin-left:2%;
@@ -33,25 +37,9 @@
 }
 .video{
 	opacity: 0.15;
-}
-.videotext{
-	z-index:100;
-    position:absolute;    
-    color:#506e6e;
-    font-family: 'Arial';
-    font-size:24px;
-    left:100px;
-    top:30%;
+	box-shadow: 1px 1px 1px #888888;
 }
 
-.videotext .sold{
-	font-size: 12px;
-	padding:5px;
-}
-.videotext .numbers{
-	font-size:18px;
-	margin-left: 20px;
-}
 .videorow{
 	margin-left:auto;
 	margin-right:auto;
@@ -63,19 +51,54 @@
 	cursor:pointer;
 }
 
-.button{
-	font-family: 'Open Sans Condensed';
-	border:none;
-	background-color:#B4CDCD;
-	margin: 0 auto;
-	color:white;
-	font-size:20px;
-	display:block;
-	width:250px;
-	margin-bottom:50px;
-	height: 40px;
+
+/** VIDEO OVERLAY **/
+
+.overlay{
+	z-index:100;
+    position:absolute;   
+    top:15%;
+	width:100%;
+	pointer-events: none;
 }
-.button:hover{
-	background-color: #668b8b;
-	cursor:pointer;
+
+.table{
+	width:100%;
 }
+
+td{
+	width:50%;
+	padding-top:5px;
+}
+.videotexttitle{
+    color:#506e6e;
+    font-family: 'Arial';
+    font-size:24px;
+    width:100%;
+    text-align: center;
+}
+
+.videotext{
+	z-index:100;
+    position:relative;    
+    /*position:absolute;  */
+	font-size: 12px;
+	text-align: center;
+}
+
+.videotextnum{
+	z-index:100;
+    position:relative;    
+    /*position:absolute;  */
+	font-size: 20px;
+	text-align: center;
+}
+
+
+/**  UPLOAD POPUP **/
+#uploadcontent{
+	text-align: center;
+	margin-top: 10%;
+}
+
+/**  BUTTON **/

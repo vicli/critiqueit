@@ -10,6 +10,7 @@
 /** NAVIGATION BAR **/
 
 #nav_bar {
+	z-index: 200;
 	top:0;
 	position: fixed;
 	width: 100%;
@@ -49,9 +50,46 @@
 }
 
 #n_browse {
-	left: 10%;
+	left: 12%;
 }
 
 #n_upload {
-	left: 19%;
+	left: 20%;
 }
+
+/**  BUTTON **/
+
+.button{
+	font-family: 'Open Sans Condensed';
+	border:none;
+	background-color: #668b8b;
+	margin: 0 auto;
+	color:white;
+	font-size:20px;
+	display:block;
+	width:250px;
+	margin-bottom:50px;
+	height: 40px;
+}
+.button2{
+	font-family: 'Open Sans Condensed';
+	border:none;
+	background-color: #668b8b;
+	margin: auto;
+	color:white;
+	font-size:15px;
+	display:inline;
+	width:150px;
+	height: 30px;
+
+}
+.button:hover, .button2:hover{
+	background-color:#B4CDCD;
+	cursor:pointer;
+}
+.buttongroup{
+	margin:0 auto;
+	margin-top:5%;
+}
+
+
