@@ -84,6 +84,7 @@
 	height: 30px;
 
 }
+
 .button:hover, .button2:hover{
 	background-color:#B4CDCD;
 	cursor:pointer;
@@ -103,4 +104,13 @@
 	height: 30px;
 	width: 400px;
 	border:1.5px solid #668b8b;
+}
+
+/** FOOTER **/
+#footer {
+	font-family: 'Open Sans Condensed'; 
+	font-weight: 300;
+	font-size: 18px;
+	text-align: center;
+	margin: 50px 0 20px 0;
 }
