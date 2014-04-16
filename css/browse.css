@@ -97,6 +97,7 @@ td{
 
 /**  UPLOAD POPUP **/
 #uploadcontent{
+	/*display:none;*/
 	text-align: center;
 	margin-top: 10%;
 }

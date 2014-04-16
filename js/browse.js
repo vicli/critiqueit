@@ -14,10 +14,16 @@ $(document).ready(function(){
 		$(targetDiv).fadeIn(200);
 	});
 
-	$('#upload').colorbox({width:"600px", height:"200px", inline:true, href:"#uploadcontent"});
+	$('#upload').colorbox({width:"600px", height:"200px", inline:true, href:"#uploadcontent",
+		onClosed: function(){
+			$('#uploadcontent').hide();
+		},
+		onOpen: function(){
+			$('#uploadcontent').show();
+		}}
+	);
+});
 
-
-})
 function uploaded(){
 	$.colorbox.close();
 	window.location.href = "uploader.html";
