@@ -36,13 +36,15 @@
 
 		<div class='container'>
 			<div id='video_area'>
-				<video id='video' src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4" controls></video>
+				<h1 id='video_head'>Video Title Here</h1><p id='vid_auth'>by UserXX</p>
+				<br/>
+				<video id='video' src="Erica Sobol and Ryan Spencer - Landfill Daughter.mp4"></video>
 
 				<div id='result_area'>
 
 					<div class='change_cmts' id='n2y_cmt'>
 						<h2 class='cmt_hd' id='n2y_c_head'><b id='num_n2y_c'></b> changed to SOLD</h2>
-						<img class='bck_arw' id='bck_yes_arw' src='img/arrow.png'><p class='back' id='bck_yes'>BACK</p>
+						<img class='bck_arw' id='bck_yes_arw' src='images/arrow.png'><p class='back' id='bck_yes'>BACK</p>
 						<div class='cmtbx' id='n2y_cmtbx'>
 						</div>
 					</div>
@@ -81,12 +83,15 @@
 			<div id='comment_area'>
 				<div id='videoline_container'>
 					<div id='vidline_playback_container'>
-						<div id="video-controls">
-	    					<button type="button" id="play-pause">Play</button>
-	    					<input type="range" id="seek-bar" step='10' value="0">
-	    					<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-	    					<button type="button" id="full-screen">Full-Screen</button>
-  						</div>
+							<div id="video-controls">
+								<p id='duration'></p>
+							    <input type="image" id="play-pause" src='images/play.png'></button>
+							    <input type="range" id="seek-bar" value="0">
+							    <button type="button" id="mute">Mute</button>
+							    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+							    <button type="button" id="full-screen">Full-Screen</button>
+							</div>
+						</div>
 					</div>
 				</div>
 
