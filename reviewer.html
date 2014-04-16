@@ -1,0 +1,163 @@
+<head>
+	<title> critique.it</title>
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
+    <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+
+</head>
+<link rel="stylesheet" type="text/css" href="css/navbar.css">
+
+<link rel= "stylesheet" type="text/css" href="css/reviewer.css">
+
+<body>
+	<div id='nav_bar'>
+
+			<a href='home.html' class='nav_ctrl' id='n_home'>
+				HOME
+			</a>
+
+			<a href='browse.html' class='nav_ctrl' id='n_browse'>
+				BROWSE
+			</a>
+
+			<a href='uploader.html' class='nav_ctrl' id='n_upload'>
+				UPLOAD
+			</a>
+
+			<a href='home.html' class='nav_ctrl' id='n_logo'>
+				CRITIQUE.IT
+			</a>
+
+			<a href='uploader.html' class='nav_ctrl' id='n_log'>
+				LOG OUT
+			</a>
+</div>
+<div class="container">
+	<div id="title">
+		<strong>My Video</strong>
+	</div>
+
+	<div id="video1">
+	<video id = "video" width="620" height="440" controls>
+	  <source src="arjun.mp4" type="video/mp4">
+	</video>
+
+	<div id="areyousold">
+		<strong>Are You Sold?</strong><br>
+		<button type="button" id="sold">YES</button>
+		<button type="button" id="notsold">NO</button>
+	</div>
+
+	<div id="solddisplay" class ="hidden">
+		<strong>YOU ARE SOLD!</strong><br>
+		<button type = "button" id="changebtn">Change?</button>
+	</div>
+
+	<div id = "notsolddisplay" class="hidden">
+		<strong>YOU ARE NOT SOLD!</strong><br>
+		<button type = "button" id="changebtn2">Change?</button>
+	</div>
+
+	<div id="confirm" class ="hidden">
+		<strong>Are you sure you want to change?</strong><br>
+		<button type="button" id="yeschange">YES</button>
+		<button type="button" id="nochange">CANCEL</button>
+	</div>
+
+	<div>
+
+	<div id="comments">
+		<input type="text" id="comment" style="font-size:15px">
+		<input type = "submit" id="cmtbtn" value = "Comment">
+		<br><br>
+		<div id="comment_list">
+	    </div>
+	</div>
+</div>
+<script>
+
+var video=document.getElementById("video"); 
+$('#cmtbtn').click(function(){
+  		// $('#message_list').append("hello");
+  		$('#comment_list').append($('#comment').val()+ '<br>');
+  		$('#comment').val('');
+  		video.play();
+  	});
+
+$("#comment").keyup(function(event){ 
+	if(event.keyCode == 13){
+		$("#cmtbtn").click();
+	}
+});
+
+$('input[type="text"]').focus(function() {
+	video.pause();
+	var minutes = Math.floor(video.currentTime/60);
+	var seconds = Math.floor(video.currentTime-minutes*60)
+	if (seconds<10){
+		seconds='0'+seconds
+	}
+
+	$('#comment').val('['+minutes+":"+seconds+']  ');
+
+});
+
+
+$(window).click(function(e) {
+	if ((42<=event.clientX<=660) && (126<=event.clientY<=200)){
+		console.log("HELLOO")
+		console.log(event.clientX)
+		console.log(event.clientY)
+	}
+});
+
+
+$('#sold').click(function(){
+	$('#areyousold').addClass('hidden')
+	$('#solddisplay').removeClass('hidden')
+});
+
+$('#notsold').click(function(){
+	$('#areyousold').addClass('hidden')
+	$('#notsolddisplay').removeClass('hidden')
+});
+
+$('#changebtn').click(function(){
+
+
+	$('#confirm').removeClass("hidden");
+	$('#solddisplay').addClass('hidden');
+
+	$('#yeschange').click(function(){
+		$('#confirm').addClass("hidden");
+		$('#notsolddisplay').removeClass('hidden');
+	});
+	$('#nochange').click(function(){
+		$('#confirm').addClass("hidden");
+		$('#solddisplay').removeClass('hidden');
+	});
+});
+
+$('#changebtn2').click(function(){
+
+
+	$('#confirm').removeClass("hidden");
+	$('#notsolddisplay').addClass('hidden');
+
+	$('#yeschange').click(function(){
+		$('#confirm').addClass("hidden");
+		$('#solddisplay').removeClass('hidden');
+	});
+	$('#nochange').click(function(){
+		$('#confirm').addClass("hidden");
+		$('#notsolddisplay').removeClass('hidden');
+	});
+
+});
+
+
+
+</script>
+
+
+</body>
+
