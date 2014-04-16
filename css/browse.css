@@ -95,9 +95,13 @@ td{
 }
 
 
+/**  UPLOAD POPUP **/
+#uploadcontent{
+	text-align: center;
+	margin-top: 10%;
+}
 
-
-/** UPLOAD BUTTON **/
+/**  BUTTON **/
 
 .button{
 	font-family: 'Open Sans Condensed';
@@ -111,7 +115,24 @@ td{
 	margin-bottom:50px;
 	height: 40px;
 }
-.button:hover{
+.button2{
+	font-family: 'Open Sans Condensed';
+	border:none;
+
+	background-color: #668b8b;
+	margin: auto;
+	color:white;
+	font-size:15px;
+	display:inline;
+	width:150px;
+	height: 30px;
+
+}
+.button:hover, .button2:hover{
 	background-color:#B4CDCD;
 	cursor:pointer;
+}
+.buttongroup{
+	margin:0 auto;
+	margin-top:5%;
 }
