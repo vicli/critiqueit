@@ -147,9 +147,9 @@ video.addEventListener("timeupdate", function() {
 
   if (Math.floor(video.currentTime)%10 == 0) {
     $('#ind_comment_container').html('');
-    $('#'+current_jump).animate({'width' : '25px', 
+    $('#_'+current_jump).animate({'width' : '25px', 
                                   'height': '22px'}, 200);
-    $('#'+last_jump).animate({'width' : '20px', 
+    $('#_'+last_jump).animate({'width' : '20px', 
                                   'height': '17px'}, 200);
     $('#start_time').html(getVideoTime(stamp));
     $('#end_time').html(getVideoTime(stamp+10));
