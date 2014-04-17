@@ -95,9 +95,17 @@ window.onload = function() {
          video.currentTime = time;
          video.play();
         playButton.src = 'images/pause.png';
-        var current_jump = Math.floor(video.currentTime/10);
-        $('#_'+current_jump).animate({'width' : '20px', 
+
+        var duration = video.duration;
+        var totalJumps = Math.floor(duration/10)+1;
+
+        for( var j=0;j<totalJumps;j++){
+            $('#_'+j).animate({'width' : '20px', 
                                  'height': '17px'}, 200);
+          }
+        var current_jump = Math.floor(video.currentTime/10);
+        $('#_'+current_jump).animate({'width' : '25px', 
+                                 'height': '22px'}, 200);
 
       });
     }
