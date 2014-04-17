@@ -1,4 +1,8 @@
-function getVideoTime(duration) {
+
+
+window.onload = function() {
+
+  function getVideoTime(duration) {
     var minutes = Math.floor(duration/60);
     var seconds = Math.floor(duration%60);
 
@@ -10,8 +14,6 @@ function getVideoTime(duration) {
     }
     return print_time;
 }
-
-window.onload = function() {
 
   var video = document.getElementById("video");
 
