@@ -39,14 +39,26 @@ window.onload = function() {
   function addCommentBubbles() {
     var duration = video.duration;
     var totalJumps = Math.floor(duration/10)+1;
-    
+
     for( var j=0;j<totalJumps;j++){
+
+      var totalComments = fake_comments.length;
+      var comment_count = 0;
+      for (var c=0; c<totalComments; c++) {
+        if (fake_comments[c].getTimeStamp() > j*10 ) {
+          if (fake_comments[c].getTimeStamp() < (j+1)*10 ) {
+            comment_count += 1;
+          }
+        }
+      }
+
       var parent = document.getElementById("comment_bubbles");
       var bubble = document.createElement('img');
       bubble.className = 'comment_img';
       bubble.src = 'images/comment.png';
       bubble.id = '_'+j; 
       bubble.style.marginLeft = 800/totalJumps-15+'px';
+      bubble.style.opacity = comment_count/totalComments*3+0.2;
       parent.appendChild(bubble);
     }
   }
@@ -68,8 +80,29 @@ window.onload = function() {
     }
   }
 
+  function clickableBubbles() {
+    var img_time = document.getElementsByClassName('comment_img');
+    for (var d=0;d<img_time.length;d++) {
+      var time = img_time[d].id;
+      document.getElementById(time).addEventListener("click", function(e) {
+        var id_raw = e.target.id;
+
+        var id = id_raw.slice(1);
+        
+        var value = (100 / video.duration) * id*10;
+        seekBar.value = value;
+        var time = video.duration * (seekBar.value / 100);
+         video.currentTime = time;
+         video.play();
+        playButton.src = 'images/pause.png';
+
+      });
+    }
+  }
+
   addCommentBubbles();
   clickableComments();
+  clickableBubbles();
 
   duration = video.duration;
   $("#duration").html('/ '+getVideoTime(duration));
@@ -94,37 +127,47 @@ fullScreenButton.addEventListener("click", function() {
 
  seekBar.addEventListener("change", function() {
  // Calculate the new time
- var time = video.duration * (seekBar.value / 100);
+     var time = video.duration * (seekBar.value / 100);
 
- // Update the video time
- video.currentTime = time;
+     // Update the video time
+     video.currentTime = time;
 
+     var value = (100 / video.duration) * video.currentTime;
+     seekBar.value = value;
+     $("#current_time").html(getVideoTime(video.currentTime));
 
+     var total_jump = Math.floor(video.duration)/10;
+     var single_jump = 800/total_jump;
+     var current_jump = Math.floor(video.currentTime)/10;
+     var jump_value = single_jump*current_jump;
 
- var value = (100 / video.duration) * video.currentTime;
- seekBar.value = value;
- $("#current_time").html(getVideoTime(video.currentTime));
+     var stamp = Math.floor(current_jump)*10;
 
- var total_jump = Math.floor(video.duration)/10;
- var single_jump = 800/total_jump;
- var current_jump = Math.floor(video.currentTime)/10;
- var jump_value = single_jump*current_jump;
+     $('#ind_comment_container').html('');
+     $('#pointer').css({"marginLeft": jump_value+'px'});
 
- var stamp = Math.floor(current_jump)*10;
-
- $('#ind_comment_container').html('');
- $('#pointer').css({"marginLeft": jump_value+'px'});
- for (var n=0; n< fake_comments.length; n++) {
-   if (fake_comments[n].getTimeStamp() > stamp && fake_comments[n].getTimeStamp() < stamp+10) {
-     fake_comments[n].render_stamp();
-   } 
- }
+    $('#_'+current_jump).animate({'width' : '25px', 
+                                     'height': '22px'}, 200);
+     $('#start_time').html(getVideoTime(stamp));
+    $('#end_time').html(getVideoTime(stamp+10));
+     for (var n=0; n< fake_comments.length; n++) {
+       if (fake_comments[n].getTimeStamp() > stamp && fake_comments[n].getTimeStamp() < stamp+10) {
+         fake_comments[n].render_stamp();
+       } 
+     }
 
 });
+
+
+
 
 seekBar.addEventListener("mousedown", function() {
-  video.pause();
+ var current_jump = Math.floor(video.currentTime/10);
+ $('#_'+current_jump).animate({'width' : '20px', 
+                                 'height': '17px'}, 200);
+ video.pause();
 });
+
 
 seekBar.addEventListener("mouseup", function() {
   video.play();
@@ -165,6 +208,8 @@ video.addEventListener("timeupdate", function() {
 
   }
 });
+
+
 
   video.addEventListener("click", function() {
     togglePlay();

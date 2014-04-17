@@ -79,14 +79,20 @@ var fake_comments = [];
 var filler_text = 'Nulla ornare ullamcorper imperdiet. Donec ac tempor lectus. '
 var filler_text2 ='Quisque ultricies tortor est, at facilisis est pretium ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
 
-for (var i=0; i< 40; i++) {
+for (var i=0; i< 41; i++) {
 	var author = 'userX'+ i;
-	if (i%3 == 0) {
-		var comment = new Comment(filler_text, author, false, 2*i+1);
+	if (i< 10 || i>15 || i> 32) {
+		if (i%3 == 0) {
+			
+				var comment = new Comment(filler_text, author, false, 2*i+1);
+		}
+		else {
+				var comment = new Comment(filler_text2, author, false, 2*i+1);
+			
+		}
 	}
-	else {
-		var comment = new Comment(filler_text2, author, false, 2*i+1);
-	}
+
+
 	fake_comments.push(comment);
 }
 
