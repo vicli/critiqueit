@@ -95,6 +95,9 @@ window.onload = function() {
          video.currentTime = time;
          video.play();
         playButton.src = 'images/pause.png';
+        var current_jump = Math.floor(video.currentTime/10);
+        $('#_'+current_jump).animate({'width' : '20px', 
+                                 'height': '17px'}, 200);
 
       });
     }
