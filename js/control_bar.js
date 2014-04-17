@@ -51,7 +51,25 @@ window.onload = function() {
     }
   }
 
+  function clickableComments() {
+    var div_time = document.getElementsByClassName('individual_comment');
+    for (var d=0;d<div_time.length;d++) {
+      var time = div_time[d].id;
+      document.getElementById(time).addEventListener("click", function(e) {
+
+        var value = (100 / video.duration) * e.target.id;
+        seekBar.value = value;
+        var time = video.duration * (seekBar.value / 100);
+         video.currentTime = time;
+         video.play();
+        playButton.src = 'images/pause.png';
+
+      });
+    }
+  }
+
   addCommentBubbles();
+  clickableComments();
 
   duration = video.duration;
   $("#duration").html('/ '+getVideoTime(duration));
@@ -142,20 +160,7 @@ video.addEventListener("timeupdate", function() {
         fake_comments[n].render_stamp();
       } 
     }
-    var div_time = document.getElementsByClassName('individual_comment');
-    for (var d=0;d<div_time.length;d++) {
-      var time = div_time[d].id;
-      document.getElementById(time).addEventListener("click", function(e) {
-
-        var value = (100 / video.duration) * e.target.id;
-        seekBar.value = value;
-        var time = video.duration * (seekBar.value / 100);
-         video.currentTime = time;
-         video.play();
-        playButton.src = 'images/pause.png';
-
-      });
-    }
+    clickableComments();
 
 
   }

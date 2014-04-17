@@ -45,15 +45,17 @@ var Comment = function(text, author, isChange, timeStamp ) {
 
 		var comment = document.createElement('div');
 		comment.className = 'individual_comment';
+		comment.id = timeStamp;
 
-
-		var comment_material = '<table border="1" id="cmt_table"><th id="time_stamp">'+render_time+
-								'</th><th id="comment_text">'+ this.text +
-								'<br/><p class="cmt_auth">by '+this.author+'<p></th>';
+		var comment_material = '<table border="1" class="cmt_table" id='+timeStamp+'><th class="time_stamp" id='+timeStamp+'>'+render_time+
+								'</th><th class="comment_text" id='+timeStamp+'>'+ this.text +
+								'<br/><p class="cmt_auth" id='+timeStamp+'>by '+this.author+'<p></th>';
 
 
 	    comment.innerHTML = comment_material;
 	    parent.appendChild(comment);
+
+	    return comment;
 	}
 }
 	
