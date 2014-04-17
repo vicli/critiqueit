@@ -34,6 +34,22 @@ window.onload = function() {
     }
   }
 
+  function addCommentBubbles() {
+    var duration = video.duration;
+    var totalJumps = Math.floor(duration/10)+1;
+    
+    for( var j=0;j<totalJumps;j++){
+      var parent = document.getElementById("comment_bubbles");
+      var bubble = document.createElement('img');
+      bubble.className = 'comment_img';
+      bubble.src = 'images/comment.png';
+      bubble.id = j; 
+      bubble.style.marginLeft = 800/totalJumps-15+'px';
+      parent.appendChild(bubble);
+    }
+  }
+
+  addCommentBubbles();
 
   duration = video.duration;
   $("#duration").html('/ '+getVideoTime(duration));
@@ -71,21 +87,6 @@ seekBar.addEventListener("mousedown", function() {
 seekBar.addEventListener("mouseup", function() {
   video.play();
   playButton.src = 'images/pause.png';
-  var total_jump = Math.floor(video.duration)/10;
-  var single_jump = 800/total_jump;
-  var current_jump = Math.floor(video.currentTime)/10;
-  var jump_value = single_jump*current_jump;
-
-  var stamp = Math.floor(current_jump)*10;
-
-  $('#ind_comment_container').html('');
-  $('#pointer').css({"marginLeft": jump_value+'px'});
-  for (var n=0; n< fake_comments.length; n++) {
-    if (fake_comments[n].getTimeStamp() > stamp && fake_comments[n].getTimeStamp() < stamp+10) {
-      fake_comments[n].render_stamp();
-    } 
-  }
-
 });
 
 video.addEventListener("timeupdate", function() {
