@@ -8,14 +8,21 @@ body{
 #title{
 	position:absolute;
 	left:26px;
-	top:70px;
-	font-weight: 100;
+	top:58px;
+	font-weight: 300;
 	color:white;
-	font-size: 72px;
+	font-size: 48px;
+	font-family: 'Open Sans Condensed';
 }
 
 #author{
-	font-size: 40px;
+	position: absolute;
+	font-size: 18px;
+	left: 126px;
+	top:87px;
+	font-weight: 300;
+	color:white;
+	font-family: 'Open Sans Condensed';
 }
 #video{
 	padding-top:10%;
@@ -38,9 +45,6 @@ body{
 	color: white;
 }
 
-#title{
-	font-size: 30px;
-}
 
 #video1{
 	position:relative;
