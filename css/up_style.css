@@ -63,8 +63,22 @@ video {
 	background-color: #5A5A5A;
 	margin-top: -10px;
 	width: 100%;
-	height: 30px;
+	height: 50px;
 }
+
+#comment_bubbles {
+	padding-top: 2px;
+	text-align: center;
+	margin-left: -75px;
+}
+
+.comment_img {
+	width: 20px;
+	height: 17px;
+	margin-top: 1px;
+	display: inline-block;
+}
+
 #video-controls {
 	padding-top: 2px;
 	text-align: center;
@@ -82,7 +96,9 @@ input[type="range"] {
     vertical-align: middle;
     -moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-	border-radius: 10px
+	border-radius: 10px;
+	z-index: 2;
+	z
 }
 
 #seek-bar::-webkit-slider-thumb{
@@ -101,6 +117,7 @@ input[type="range"]::-webkit-slider-thumb {
     -moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px
+	z-index: 4;
 }
 
 #play-pause, #mute, #full-screen{
