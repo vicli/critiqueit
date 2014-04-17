@@ -2,11 +2,15 @@
 	<head>
 		<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 		<script type="text/javascript" src="external_js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+		<script type="text/javascript" src="external_js/jquery.colorbox-min.js"></script>
+
 		<script src="js/up_script.js"></script>    
 		<script src="js/comment.js"></script>
 		<script src="js/control_bar.js"></script> 
 	    <link rel="stylesheet" type="text/css" href="css/up_style.css">
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">   
+		<link rel="stylesheet" href="css/colorbox.css" />
+
     <title>VIDEO NAME HERE</title>
 	</head>
 
@@ -19,6 +23,10 @@
 
 			<a href='browse.html' class='nav_ctrl' id='n_browse'>
 				BROWSE
+			</a>
+
+			<a onClick="$.colorbox({width:'600px', height:'200px', href:'./upload.html'})"  class='nav_ctrl' id='n_upload'>
+				UPLOAD
 			</a>
 
 			<a href='home.html' class='nav_ctrl' id='n_logo'>
