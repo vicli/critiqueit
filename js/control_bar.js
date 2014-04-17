@@ -118,9 +118,6 @@ window.onload = function() {
   duration = video.duration;
   $("#duration").html('/ '+getVideoTime(duration));
 
-  video.addEventListener('loadedmetadata', function() {
-      console.log(getVideoDuration(duration));
-  });
 
 playButton.addEventListener("click", function() {
   togglePlay();
