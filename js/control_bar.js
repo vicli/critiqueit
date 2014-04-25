@@ -1,6 +1,5 @@
-
-
 window.onload = function() {
+
 
   function getVideoTime(duration) {
     var minutes = Math.floor(duration/60);
@@ -16,6 +15,8 @@ window.onload = function() {
 }
 
   var video = document.getElementById("video");
+    console.log(video.duration);
+
 
   var playButton = document.getElementById("play-pause");
   var fullScreenButton = document.getElementById("full-screen");
@@ -39,6 +40,7 @@ window.onload = function() {
   }
 
   function addCommentBubbles() {
+    console.log('im adding comment bubbles wee!');
     var duration = video.duration;
     var totalJumps = Math.floor(duration/10)+1;
 
@@ -117,8 +119,7 @@ window.onload = function() {
   clickableComments();
   clickableBubbles();
 
-  duration = video.duration;
-  $("#duration").html('/ '+getVideoTime(duration));
+  $("#duration").html('/ '+getVideoTime(video.duration));
 
 
 playButton.addEventListener("click", function() {
@@ -218,8 +219,6 @@ video.addEventListener("timeupdate", function() {
 
   }
 });
-
-
 
   video.addEventListener("click", function() {
     togglePlay();
