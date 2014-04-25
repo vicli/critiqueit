@@ -1,3 +1,5 @@
+
+
 //isChange is either false, "y2n" or "n2y"
 var Comment = function(text, author, isChange, timeStamp ) {
 
@@ -64,6 +66,7 @@ var dummy_comments2n= [];
 var random_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor nisl tincidunt lectus accumsan aliquam. Etiam vitae elit est. Quisque quis eros sed turpis tristique eleifend. Donec sed lacinia enim, in ullamcorper sem. "
 
 for (var i=0; i< 5; i++) {
+	console.log("created comments")
 	var author = 'user'+ i;
 	var comment = new Comment(random_text, author, "n2y");
 	dummy_comments2y.push(comment);

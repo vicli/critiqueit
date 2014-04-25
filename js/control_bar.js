@@ -1,4 +1,5 @@
-window.onload = function() {
+
+$(document).ready(function(){
 
 
   function getVideoTime(duration) {
@@ -12,7 +13,7 @@ window.onload = function() {
       var print_time= minutes+":"+seconds;
     }
     return print_time;
-}
+  }
 
   var video = document.getElementById("video");
     console.log(video.duration);
@@ -40,14 +41,15 @@ window.onload = function() {
   }
 
   function addCommentBubbles() {
-    console.log('im adding comment bubbles wee!');
     var duration = video.duration;
     var totalJumps = Math.floor(duration/10)+1;
+
 
     for( var j=0;j<totalJumps;j++){
 
       var totalComments = fake_comments.length;
       var comment_count = 0;
+
       for (var c=0; c<totalComments; c++) {
         if (fake_comments[c].getTimeStamp() > j*10 ) {
           if (fake_comments[c].getTimeStamp() < (j+1)*10 ) {
@@ -55,7 +57,6 @@ window.onload = function() {
           }
         }
       }
-
       var parent = document.getElementById("comment_bubbles");
       var bubble = document.createElement('img');
       bubble.className = 'comment_img';
@@ -115,12 +116,15 @@ window.onload = function() {
     }
   }
 
-  addCommentBubbles();
-  clickableComments();
-  clickableBubbles();
+  video.addEventListener('loadedmetadata', function() {
+      duration = video.duration;
+      $("#duration").html('/ '+getVideoTime(duration));
+      addCommentBubbles();
+      clickableComments();
+      clickableBubbles();
+  });
 
   $("#duration").html('/ '+getVideoTime(video.duration));
-
 
 playButton.addEventListener("click", function() {
   togglePlay();
@@ -149,7 +153,7 @@ fullScreenButton.addEventListener("click", function() {
 
      var total_jump = Math.floor(video.duration)/10;
      var single_jump = 800/total_jump;
-     var current_jump = Math.floor(video.currentTime)/10;
+     var current_jump = Math.floor(video.currentTime/10);
      var jump_value = single_jump*current_jump;
 
      var stamp = Math.floor(current_jump)*10;
@@ -157,7 +161,7 @@ fullScreenButton.addEventListener("click", function() {
      $('#ind_comment_container').html('');
      $('#pointer').css({"marginLeft": jump_value+'px'});
 
-    $('#_'+current_jump).animate({'width' : '25px', 
+     $('#_'+current_jump).animate({'width' : '25px', 
                                      'height': '22px'}, 200);
      $('#start_time').html(getVideoTime(stamp));
     $('#end_time').html(getVideoTime(stamp+10));
@@ -243,4 +247,4 @@ volumeBar.addEventListener("change", function() {
     // Update the video volume
     video.volume = volumeBar.value;
   });
-}
+});
